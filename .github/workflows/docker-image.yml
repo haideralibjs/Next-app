@@ -43,7 +43,14 @@ jobs:
           task-definition-family: Next-js-App
           container-name: Next-App-container
           image: docker.io/haideralibjs/next-app:latest
-      
+          
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: Next-js-App-service-9x0aj6wj
+          cluster: Next-App-cluster
+          wait-for-service-stability: true
 
 
         
