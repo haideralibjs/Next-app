@@ -16,4 +16,4 @@ phases:
       - printf '[{"name":"next-container","imageUri":"338726278482.dkr.ecr.ap-south-1.amazonaws.com/next-app:latest"}]' > imagedefinitions.json
 artifacts:
   files:
-    - imageDefinitions.json
+    - imagedefinitions.json
