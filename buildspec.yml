@@ -12,6 +12,8 @@ phases:
     commands:
       - docker tag next-app:latest 338726278482.dkr.ecr.ap-south-1.amazonaws.com/next-app:latest
       - docker push 338726278482.dkr.ecr.ap-south-1.amazonaws.com/next-app:latest
+      - echo Writing imagedefinitions.json...
+      - printf '[{"name":"next-container","imageUri":"338726278482.dkr.ecr.ap-south-1.amazonaws.com/next-app:latest"}]' > imagedefinitions.json
 artifacts:
   files:
     - imageDefinitions.json
