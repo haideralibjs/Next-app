@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      # ECR login
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 338726278482.dkr.ecr.ap-south-1.amazonaws.com
+  build:
+    commands:
+      - docker build -t my-angular-app:latest .
+
+  post_build:
+    commands:
+      - docker tag next-app:latest 338726278482.dkr.ecr.ap-south-1.amazonaws.com/next-app:latest
+      - docker push 338726278482.dkr.ecr.ap-south-1.amazonaws.com/next-app:latest
