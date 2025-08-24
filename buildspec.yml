@@ -13,5 +13,5 @@ phases:
       - docker tag next-app:latest 338726278482.dkr.ecr.ap-south-1.amazonaws.com/next-app:latest
       - docker push 338726278482.dkr.ecr.ap-south-1.amazonaws.com/next-app:latest
   artifacts:
-  files:
-    - imageDefinitions.json
+    files:
+      - imageDefinitions.json
